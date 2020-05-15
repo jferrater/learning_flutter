@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:learning_flutter/converter_route.dart';
+import 'package:learning_flutter/unit_converter.dart';
 import 'package:learning_flutter/unit.dart';
 import 'package:meta/meta.dart';
 
@@ -24,7 +24,7 @@ class Category extends StatelessWidget {
         assert(units != null),
         super(key: key);
 
-  /// Navigates to the [ConverterScreen].
+  /// Navigates to the [UnitConverter].
   void _navigateToConverterScreen(BuildContext context) {
     Navigator.of(context).push(MaterialPageRoute<Null>(
       builder: (BuildContext context) {
@@ -38,7 +38,7 @@ class Category extends StatelessWidget {
             centerTitle: true,
             backgroundColor: color,
           ),
-          body: ConverterScreen(
+          body: UnitConverter(
             units: units,
             color: color,
           ),
