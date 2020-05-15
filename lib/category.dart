@@ -1,30 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:learning_flutter/unit_converter.dart';
 import 'package:learning_flutter/unit.dart';
 import 'package:meta/meta.dart';
 
-final _rowHeight = 100.0;
-final _borderRadius = BorderRadius.circular(_rowHeight / 2);
-
-class Category extends StatelessWidget {
+class Category {
   final String name;
   final IconData iconData;
   final ColorSwatch color;
   final List<Unit> units;
 
   const Category(
-      {Key key,
-      @required this.name,
+      {@required this.name,
       @required this.color,
       @required this.iconData,
       @required this.units})
       : assert(name != null),
         assert(color != null),
         assert(iconData != null),
-        assert(units != null),
-        super(key: key);
+        assert(units != null);
 
-  /// Navigates to the [UnitConverter].
+/*   /// Navigates to the [UnitConverter].
   void _navigateToConverterScreen(BuildContext context) {
     Navigator.of(context).push(MaterialPageRoute<Null>(
       builder: (BuildContext context) {
@@ -81,5 +75,5 @@ class Category extends StatelessWidget {
         ),
       ),
     );
-  }
+  } */
 }
