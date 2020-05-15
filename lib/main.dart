@@ -9,12 +9,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Unit Converter',
-      home: Scaffold(
-        backgroundColor: Colors.green[100],
-        body: Center(
-          child: CategoryRoute(),
-        ),
-      ),
+      home: CategoryRoute(),
     );
   }
 }

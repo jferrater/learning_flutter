@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:learning_flutter/category.dart';
+import 'package:learning_flutter/unit.dart';
 
 final _backgroundColor = Colors.green[100];
 
+/// Categories screen
 class CategoryRoute extends StatelessWidget {
   const CategoryRoute();
 
@@ -43,6 +45,17 @@ class CategoryRoute extends StatelessWidget {
     }
   }
 
+  /// Returns a list of mock [Unit]s.
+  List<Unit> _retrieveUnitList(String categoryName) {
+    return List.generate(10, (int i) {
+      i += 1;
+      return Unit(
+        name: '$categoryName Unit $i',
+        conversion: i.toDouble(),
+      );
+    });
+  }
+  
   @override
   Widget build(BuildContext context) {
     final categories = <Category>[];
@@ -51,6 +64,7 @@ class CategoryRoute extends StatelessWidget {
         color: _baseColors[i],
         iconData: Icons.audiotrack,
         name: _categoryNames[i],
+        units: _retrieveUnitList(_categoryNames[i]),
       ));
     }
     final listView = Container(
