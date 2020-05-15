@@ -8,9 +8,10 @@ import 'package:learning_flutter/unit.dart';
 ///
 /// While it is named ConverterRoute, a more apt name would be ConverterScreen,
 /// because it is responsible for the UI at the route's destination.
-class ConverterScreen extends StatelessWidget {
+class ConverterScreen extends StatefulWidget {
   final List<Unit> units;
   final Color color;
+
   const ConverterScreen({
     @required this.units,
     @required this.color,
@@ -18,10 +19,16 @@ class ConverterScreen extends StatelessWidget {
         assert(color != null);
 
   @override
+  _ConverterScreenState createState() => _ConverterScreenState();
+}
+
+class _ConverterScreenState extends State<ConverterScreen> {
+
+  @override
   Widget build(BuildContext context) {
-    final unitWidgets = units.map((Unit unit) {
+    final unitWidgets = widget.units.map((Unit unit) {
       return Container(
-        color: color,
+        color: widget.color,
         margin: EdgeInsets.all(8.0),
         padding: EdgeInsets.all(16.0),
         child: Column(
@@ -43,4 +50,5 @@ class ConverterScreen extends StatelessWidget {
       children: unitWidgets,
     );
   }
+
 }

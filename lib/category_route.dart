@@ -4,9 +4,14 @@ import 'package:learning_flutter/unit.dart';
 
 final _backgroundColor = Colors.green[100];
 
+class CategoryRoute extends StatefulWidget {
+  @override
+  _CategoryRouteState createState() => _CategoryRouteState();
+}
+
 /// Categories screen
-class CategoryRoute extends StatelessWidget {
-  const CategoryRoute();
+class _CategoryRouteState extends State<CategoryRoute> {
+  final categories = <Category>[];
 
   static const _categoryNames = <String>[
     'Length',
@@ -55,10 +60,10 @@ class CategoryRoute extends StatelessWidget {
       );
     });
   }
-  
+
   @override
-  Widget build(BuildContext context) {
-    final categories = <Category>[];
+  void initState() {
+    super.initState();
     for (var i = 0; i < _categoryNames.length; i++) {
       categories.add(Category(
         color: _baseColors[i],
@@ -67,6 +72,10 @@ class CategoryRoute extends StatelessWidget {
         units: _retrieveUnitList(_categoryNames[i]),
       ));
     }
+  }
+
+  @override
+  Widget build(BuildContext context) {
     final listView = Container(
       color: _backgroundColor,
       padding: EdgeInsets.symmetric(horizontal: 8.0),
@@ -75,10 +84,7 @@ class CategoryRoute extends StatelessWidget {
     final appBar = AppBar(
       title: Text(
         'Unit Converter',
-        style: TextStyle(
-          color: Colors.black,
-          fontSize: 30.0
-        ),
+        style: TextStyle(color: Colors.black, fontSize: 30.0),
       ),
       centerTitle: true,
       backgroundColor: _backgroundColor,
