@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:learning_flutter/category.dart';
-
-const _categoryName = 'audio track';
-const _categoryIcon = Icons.audiotrack;
-const _categoryColor = Colors.green;
+import 'package:learning_flutter/category_route.dart';
 
 void main() => runApp(MyApp());
 
@@ -16,11 +12,7 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         backgroundColor: Colors.green[100],
         body: Center(
-          child: Category(
-            color: _categoryColor,
-            name: _categoryName,
-            iconData: _categoryIcon,
-          ),
+          child: CategoryRoute(),
         ),
       ),
     );
