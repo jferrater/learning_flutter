@@ -8,7 +8,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Audio Track',
+      title: 'Unit Converter',
       home: Scaffold(
         backgroundColor: Colors.green[100],
         body: Center(
